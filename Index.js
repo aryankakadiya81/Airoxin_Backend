@@ -35,14 +35,14 @@ route.post("/Mail", (req, res) => {
         subject: Sub, // Subject line
         text: Txt,
         html: `<h1>Email Data</h1>
-        <h3>Name:${Name}</h3>
-        <h3>Email:${Email}</h3>
-        <h3>Country:${Country}</h3>
-        <h3>CountryCode:${CountryCode}</h3>
-        <h3>CountryDielCode:${CountryDielCode}</h3>
-        <h3>Mobile:${Mobile}</h3>
-        <h3>Subject:${Sub}</h3>
-        <h3>Details:${Txt}</h3>`
+        <h3>Name: ${Name}</h3>
+        <h3>Email: ${Email}</h3>
+        <h3>Country: ${Country}</h3>
+        <h3>CountryCode: ${CountryCode}</h3>
+        <h3>CountryDielCode: ${CountryDielCode}</h3>
+        <h3>Mobile: ${Mobile}</h3>
+        <h3>Subject: ${Sub}</h3>
+        <h3>Details: ${Txt}</h3>`
     }
 
     transporter.sendMail(MailData, function (err, info) {
@@ -60,5 +60,5 @@ route.post("/Mail", (req, res) => {
 
 
 app.listen(port, () => {
-    console.log(`Server listening on port ${port}`);
+    console.log(`Server listening on port  ${port}`);
 });
