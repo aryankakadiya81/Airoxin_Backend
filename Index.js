@@ -27,22 +27,28 @@ const transporter = nodemailer.createTransport({
 
 
 route.post("/Mail", (req, res) => {
-    let { Name, Email, Country, CountryCode, CountryDielCode, Mobile, Sub, Txt } = req.body;
+    let { name,
+        email,
+        phone,
+        subject,
+        message,
+        country,
+        countrycode } = req.body;
 
     let MailData = {
         from: 'aryan.airoxin@gmail.com', // sender address
         to: "info.airoxin@gmail.com", // list of receivers
-        subject: Sub, // Subject line
-        text: Txt,
+        subject: subject, // Subject line
+        text: message,
         html: `<h1>Email Data</h1>
-        <h3>Name: ${Name}</h3>
-        <h3>Email: ${Email}</h3>
-        <h3>Country: ${Country}</h3>
-        <h3>CountryCode: ${CountryCode}</h3>
-        <h3>CountryDielCode: ${CountryDielCode}</h3>
-        <h3>Mobile: ${Mobile}</h3>
-        <h3>Subject: ${Sub}</h3>
-        <h3>Details: ${Txt}</h3>`
+        <h3>Name: ${name}</h3>
+        <h3>Email: ${email}</h3>
+        <h3>Country: ${country}</h3>
+        <h3>CountryCode: ${country}</h3>
+        <h3>CountryDielCode: ${countrycode}</h3>
+        <h3>Mobile: ${phone}</h3>
+        <h3>Subject: ${subject}</h3>
+        <h3>Details: ${message}</h3>`
     }
 
     transporter.sendMail(MailData, function (err, info) {
